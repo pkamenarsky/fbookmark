@@ -72,8 +72,8 @@ var INFO =
 		Folder autocompletion is provided.
     </p>
     <item>
-        <tags>:fbookmark :fbmark</tags>
-        <spec>:fbookmark <a>tag</a></spec>
+        <tags>:fbmark :fbm</tags>
+        <spec>:fbmark <a>tag</a></spec>
         <description>
             <p>
 				Creates a bookmark in the folder specified by tag.
