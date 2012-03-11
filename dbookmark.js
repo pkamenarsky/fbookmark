@@ -1,5 +1,9 @@
-function ls(file) {
+function ls() {
 	return io.File(options.get("dbpath").stringValue).readDirectory();
+}
+
+function dirname(path) {
+	return path.substring(path.lastIndexOf(io.File.PATH_SEP) + 1);
 }
 
 group.options.add(["dbpath"],
@@ -19,11 +23,11 @@ group.commands.add(["dbbookmark"], "Save current page as bookmark in Dropbox fol
 		},
 		
 		{
+			argCount: 1,
 			completer: function(context) {
 				context.title = ["Path"];
-				// context.completions = [['misc', 'Dropbox/misc'], ['asdas', 'lalalal']];
-				// context.completions = [[homedir(), "homedir"]];
-				context.completions = ls(homedir()).filter(function(file) {return file.isDirectory;}).map(function (dir) {return [dir.path, dir.path]});
-				// context.completions = [ls(homedir())];
+				context.completions = ls().filter(function (file) {
+					return file.isDirectory();}).map(function (dir) {
+						return [dirname(dir.path), dir.path]});
 			}
 		});
