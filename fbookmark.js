@@ -59,7 +59,7 @@ XML.ignoreWhitespace = false;
 XML.prettyPrinting   = false;
 var INFO =
 <plugin name="fbookmark" version="0.1"
-        href="http://dactyl.sf.net/pentadactyl/plugins#noscript-plugin"
+        href="https://github.com/pkamenarsky/fbookmark"
         summary="Store bookmarks in files"
         xmlns={NS}>
     <author email="pk@harmonious.at">Philip Kamenarsky</author>
