@@ -22,7 +22,7 @@ group.commands.add(["fbmark", "fbm"], "Save current page as bookmark in folder",
 			var bookmark;
 
 			if (options.get("fbwebloc")) {
-				bookmark = io.File(options.get("fbpath").stringValue).child("" + item).child(document.title.replace(/\//g, ":") + ".webloc");
+				bookmark = io.File(options.get("fbpath").stringValue).child("" + item).child(document.title.replace(/\//g, ":").replace(" - Pentadactyl", "") + ".webloc");
 				bookmark.write(
 					"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
 					"<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n" +
@@ -34,7 +34,7 @@ group.commands.add(["fbmark", "fbm"], "Save current page as bookmark in folder",
 					"</plist>\n");
 			}
 			else {
-				bookmark = io.File(options.get("fbpath").stringValue).child("" + item).child(document.title.replace(/\//g, ":") + ".url");
+				bookmark = io.File(options.get("fbpath").stringValue).child("" + item).child(document.title.replace(/\//g, ":").replace(" - Pentadactyl", "") + ".url");
 				bookmark.write(
 					"[InternetShortcut]\r\n" +
 					"URL=" + DOM.escapeHTML(buffer.URL) + "\r\n");
