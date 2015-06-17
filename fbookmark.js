@@ -55,51 +55,42 @@ group.commands.add(["fbmark", "fbm"], "Save current page as bookmark in folder",
 			}
 		});
 
-XML.ignoreWhitespace = false;
-XML.prettyPrinting   = false;
 var INFO =
-<plugin name="fbookmark" version="0.1"
-        href="https://github.com/pkamenarsky/fbookmark"
-        summary="Store bookmarks in files"
-        xmlns={NS}>
-    <author email="pk@harmonious.at">Philip Kamenarsky</author>
-    <license href="http://opensource.org/licenses/mit-license.php">MIT</license>
-    <project name="FBookmarks" min-version="1.0"/>
-    <p>
-		This plugin stores bookmarks as individual .webloc or .url files directly in
-		the filesystem. This enables Dropbox integration, system wide bookmark URL search and
-		better organization of project related links and files (keep everything in one place).
-		Folder autocompletion is provided.
-    </p>
-    <item>
-        <tags>:fbmark :fbm</tags>
-        <spec>:fbmark <a>tag</a></spec>
-        <description>
-            <p>
-				Creates a bookmark in the folder specified by tag.
-            </p>
-        </description>
-    </item>
-    <item>
-        <tags>'fbwebloc' 'nofbwebloc'</tags>
-        <spec>'fbwebloc'</spec>
-        <type>boolean</type> <default>fbwebloc</default>
-        <description>
-            <p>
-				Whether to store the bookmarks as .webloc or .url files.
-            </p>
-        </description>
-    </item>
-    <item>
-        <tags>'fbpath'</tags>
-        <spec>'fbpath'</spec>
-        <type>string</type> <default>~</default>
-        <description>
-            <p>
-                File path for autocompletion items; bookmark files are stored under one of the
-				autocompletetd items (i.e. folders are misused as bookmark tags).
-            </p>
-        </description>
-    </item>
-</plugin>;
+["plugin", { name: "fbookmark",
+             version: "0.1",
+             href: "https://github.com/pkamenarsky/fbookmark",
+             summary: "Store bookmarks in files",
+             xmlns: "dactyl"
+           },
+    [ "author",  { email: "pk@harmonious.at" }, "Philip Kamenarsky" ],
+    [ "license", { href: "http://opensource.org/licenses/mit-license.php" }, "MIT" ],
+    [ "project", { name: "FBookmarks", "min-version": "1.0" } ],
+    [ "p", {},
+      "This plugin stores bookmarks as individual .webloc or .url files directly in",
+      "the filesystem. This enables Dropbox integration, system wide bookmark URL search and",
+      "better organization of project related links and files (keep everything in one place).",
+      "Folder autocompletion is provided." ],
+    [ "item", {},
+        [ "tags", {}, ":fbmark", ":fbm" ],
+        [ "spec", {}, ":fbmark <a>tag</a>" ],
+        [ "description", {},
+            ["p", {},
+              "Creates a bookmark in the folder specified by tag." ]]],
+    [ "item", {},
+        [ "tags", {}, "'fbwebloc' 'nofbwebloc'" ],
+        [ "spec", {}, "'fbwebloc'" ],
+        [ "type", {}, "boolean" ],
+        [ "default", {}, "fbwebloc" ],
+        [ "description",
+            [ "p", {},
+              "Whether to store the bookmarks as .webloc or .url files."]]],
+    [ "item", {},
+        [ "tags", {}, "'fbpath'" ],
+        [ "spec", {}, "'fbpath'" ],
+        [ "type", {}, "string" ],
+        [ "type", {}, "~" ],
+        [ "description",
+            ["p", {},
+                "File path for autocompletion items; bookmark files are stored under one of the",
+                "autocompletetd items (i.e. folders are misused as bookmark tags)."]]]]
 
